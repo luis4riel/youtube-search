@@ -1,0 +1,11 @@
+<!--  Search Results List -->
+<h2>List of search results that have been saved</h2>
+<p>Here are your saved searches:</p>
+<div *ngFor="let item of ytSearchList">
+  <div *ngIf="item.resourceId.kind == 'youtube#video'">
+    <!--"videoId": "x_vxcQfZctU",-->
+    <p>Title: {{ item.snippet.channelTitle }}</p>
+    <p>Description: {{ item.snippet.description }}</p>
+    <p>Published At: {{ item.snippet.publishedAt }}</p>
+  </div>
+</div>

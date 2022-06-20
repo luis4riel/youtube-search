@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "0SgYBOS7yCM+JLNE5GCKGmBxkn0NBHICgF1kxfok7/QW0m+sbIwCWhDNDnKJE2ub8QHcCcl19mxtCvEKklZx/Q==",
+  "success": true,
+  "projectFilePath": "D:\\handon_yout\\back_vs\\YoutubeSearch\\YoutubeSearch.Domain\\YoutubeSearch.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\la_za\\.nuget\\packages\\google.apis\\1.57.0\\google.apis.1.57.0.nupkg.sha512",
+    "C:\\Users\\la_za\\.nuget\\packages\\google.apis.auth\\1.57.0\\google.apis.auth.1.57.0.nupkg.sha512",
+    "C:\\Users\\la_za\\.nuget\\packages\\google.apis.core\\1.57.0\\google.apis.core.1.57.0.nupkg.sha512",
+    "C:\\Users\\la_za\\.nuget\\packages\\google.apis.youtube.v3\\1.57.0.2721\\google.apis.youtube.v3.1.57.0.2721.nupkg.sha512",
+    "C:\\Users\\la_za\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
