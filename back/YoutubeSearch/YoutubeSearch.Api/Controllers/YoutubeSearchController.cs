@@ -44,23 +44,18 @@ namespace YoutubeSearch.Api.Controllers
             }
         }
 
-        [HttpPost("AddSearchResult/{id}")]
-        public bool AddSearchResult(int id)
+        [HttpPost("AddSearchResult")]
+        public bool AddSearchResult(SearchResult content)
         {
-            //todo pegar o objeto e enviar aqui...
-            string example = "{\"ResourceGuid\":\"7ade6a17-5bb8-4fdb-ba02-f8f91ef94f49\",\"SnippetGuid\":\"6e344251-5095-4163-8996-9a72e150f6e8\",\"ETag\":\"7GkoR1-c4xQxdFSp-g_Xz3seyls\",\"ResourceId\":{\"ChannelId\":null,\"Kind\":\"youtube#video\",\"PlaylistId\":null,\"VideoId\":\"x_vxcQfZctU\",\"ETag\":null},\"Kind\":\"youtube#searchResult\",\"Snippet\":{\"ChannelId\":\"UCVFbXI6Gu8U2f9Gjtxw4A-Q\",\"ChannelTitle\":\"UOL\",\"Description\":\"OcolunistaJosiasdeSouzacomentouhoje,duranteaparticipaçãonoUOLNews,sobrearepercussãododesfiledaescolade...\",\"LiveBroadcastContent\":\"none\",\"PublishedAtRaw\":\"2022-04-20T15:27:50Z\",\"PublishedAt\":\"2022-04-20T12:27:50-03:00\",\"Title\":\"asd\",\"ETag\":null}}";
-
-            SearchResult abc = JsonSerializer.Deserialize<SearchResult>(example);
-
-            return YoutubeSearchService.Add(abc).Result;
+            return YoutubeSearchService.Add(content).Result;
         }
         
-        [HttpDelete("Delete/{id}")]
-        public async Task<IActionResult> Delete(Guid id)
+        [HttpDelete("Delete/{etag}")]
+        public async Task<IActionResult> Delete(string etag)
         {
             try
             {
-                return await YoutubeSearchService.Delete(id) ? Ok("Success") : BadRequest("It was not possible to delete event");
+                return await YoutubeSearchService.Delete(etag) ? Ok(true) : BadRequest("It was not possible to delete event");
             }
             catch (Exception ex)
             {

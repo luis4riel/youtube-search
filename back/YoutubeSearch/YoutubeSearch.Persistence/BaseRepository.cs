@@ -48,13 +48,13 @@ namespace YoutubeSearch.Persistence
             return await query.ToArrayAsync();
         }
 
-        public async Task<SearchResult> GetSearchResultById(Guid guid)
+        public async Task<SearchResult> GetSearchResultByEtag(string etag)
         {
             IQueryable<SearchResult> query = _context.SearchResults
                 .Include(e => e.Snippet)
                 .Include(e => e.ResourceId);
 
-            query = query.Where(e => e.Id.Equals(guid));
+            query = query.Where(e => e.ETag.Equals(etag));
 
             return await query.FirstOrDefaultAsync();
         }

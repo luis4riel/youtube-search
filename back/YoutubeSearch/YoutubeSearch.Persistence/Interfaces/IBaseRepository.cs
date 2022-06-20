@@ -10,6 +10,6 @@ namespace YoutubeSearch.Persistence.Interfaces
         void DeleteRange<T>(T[] entity) where T : class;
         Task<bool> SaveChangesAsync();
         Task<SearchResult[]> GetAllSearchResultsAsync();
-        Task<SearchResult> GetSearchResultById(Guid guid);
+        Task<SearchResult> GetSearchResultByEtag(string etag);
     }
 }

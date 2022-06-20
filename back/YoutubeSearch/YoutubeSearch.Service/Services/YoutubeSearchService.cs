@@ -31,12 +31,12 @@ namespace YoutubeSearch.Application.Services
             }
         }
 
-        public async Task<bool> Delete(Guid guid)
+        public async Task<bool> Delete(string etag)
         {
             try
             {
-                var result = BaseRepository.GetSearchResultById(guid).Result;
-                if (result == null) throw new Exception("Elemento não ecxiste...");
+                var result = BaseRepository.GetSearchResultByEtag(etag).Result;
+                if (result == null) throw new Exception("not found bro...");
 
                 BaseRepository.Delete(result);
                 return await BaseRepository.SaveChangesAsync();
@@ -91,7 +91,7 @@ namespace YoutubeSearch.Application.Services
             return JsonSerializer.Serialize(response, options);
         }
 
-        private SearchResult MakeNewSearchResult(Google.Apis.YouTube.v3.Data.SearchResult item)
+        private static SearchResult MakeNewSearchResult(Google.Apis.YouTube.v3.Data.SearchResult item)
         {
             return new(
                 item.ETag,
