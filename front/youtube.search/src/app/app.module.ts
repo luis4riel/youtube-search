@@ -17,9 +17,11 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import {MatSidenavModule} from '@angular/material/sidenav';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { SafePipe } from './safe.pipe';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
-  declarations: [AppComponent, SearchResultComponent],
+  declarations: [AppComponent, SearchResultComponent, SafePipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,7 +37,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatTabsModule,
     MatListModule,
     MatTableModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDialogModule,
+    MatCardModule
   ],
   providers: [YoutubeSearchService],
   bootstrap: [AppComponent],

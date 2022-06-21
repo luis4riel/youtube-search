@@ -1,8 +1,7 @@
 <mat-form-field class="example-form-field" appearance="fill">
   <mat-label>Please search for a channel, video or playlist</mat-label>
   <input matInput type="text" #inputItem>
-  <button *ngIf="inputItem" matSuffix mat-icon-button aria-label="Clear" 
-    (click)="inputItem.value=''">
+  <button *ngIf="inputItem" matSuffix mat-icon-button aria-label="Clear" (click)="inputItem.value=''">
     <mat-icon>close</mat-icon>
   </button>
 </mat-form-field>
@@ -12,29 +11,46 @@
 <mat-tab-group mat-align-tabs="center">
   <mat-tab label="List of search results">
     <div *ngFor="let item of ytSearchListSearch; last as last">
-      <div style="border-bottom: 14px">
-        <p>Title: {{ item.Snippet.ChannelTitle }}</p>
-        <p>Description: {{ item.Snippet.Description }}</p>
-        <p>Published At: {{ item.Snippet.PublishedAt }}</p>
-        <button mat-stroked-button color="primary" (click)="AddSearchResult(item)">Save result</button>
-        <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
-      </div>
+      <mat-tab-nav-panel label="Videos">
+      </mat-tab-nav-panel>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{item.Snippet.ChannelTitle}}</mat-card-title>
+          <mat-card-subtitle>{{item.Snippet.PublishedAt}}</mat-card-subtitle>
+        </mat-card-header>
+        <div *ngIf="item.ResourceId.Kind == 'youtube#video'">
+          <iframe [src]="'https://www.youtube.com/embed/' + item.ResourceId.VideoId | safeUrl" width="360"
+            height="215"></iframe>
+        </div>
+        <mat-card-content>
+          <p>{{ item.Snippet.Description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-stroked-button color="primary" (click)="AddSearchResult(item)">SAVE</button>
+        </mat-card-actions>
+      </mat-card>
+      <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
     </div>
   </mat-tab>
   <mat-tab label="Saved Search Results List">
-    <!--  TODO adicionar controle qnd não tiver nada na lista -->
     <div *ngFor="let item of ytSearchListSaved; last as last">
-      <div *ngIf="item.resourceId.kind == 'youtube#video'">
-        <div>
-          <p>Title: {{ item.snippet.channelTitle }}</p>
-          <p>Description: {{ item.snippet.description }}</p>
-          <p>Published At: {{ item.snippet.publishedAt }}</p>
-          <button mat-stroked-button color="warn" (click)="RemoveSearchResult(item.eTag)">Delete result</button>
-          <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{item.snippet.channelTitle}}</mat-card-title>
+          <mat-card-subtitle>{{item.snippet.publishedAt}}</mat-card-subtitle>
+        </mat-card-header>
+        <div *ngIf="item.resourceId.kind == 'youtube#video'">
+          <iframe [src]="'https://www.youtube.com/embed/' + item.resourceId.videoId | safeUrl" width="360"
+            height="215"></iframe>
         </div>
-      </div>
+        <mat-card-content>
+          <p>{{ item.snippet.description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-stroked-button color="warn" (click)="RemoveSearchResult(item.eTag)">DELETE</button>
+        </mat-card-actions>
+      </mat-card>
+      <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
     </div>
   </mat-tab>
 </mat-tab-group>
-
-
