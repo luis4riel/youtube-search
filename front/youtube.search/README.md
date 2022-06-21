@@ -1,6 +1,6 @@
 # Youtube.Search
 
-This projetct is a front-end consuming a back-end api that allows searching/saving/delete channel/video data in the youtube api.
+This project is a front-end consuming a back-end api that allows searching/saving/delete channel/video data in the youtube api.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
 

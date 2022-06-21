@@ -69,7 +69,7 @@ namespace YoutubeSearch.Application.Services
 
             var searchListRequest = youtubeService.Search.List("snippet");
             searchListRequest.Q = valueContent;
-            searchListRequest.MaxResults = 50;
+            searchListRequest.MaxResults = 20;
 
             var searchListResponse = await searchListRequest.ExecuteAsync();
 

@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeSearch.Domain", "You
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeSearch.Application", "YoutubeSearch.Service\YoutubeSearch.Application.csproj", "{E01837F4-33BF-4740-B024-2D5933153537}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeSearch.Persistence", "YoutubeSearch.Persistence\YoutubeSearch.Persistence.csproj", "{2DFAAEC3-9880-46E5-A1B4-E9F43EFEF661}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeSearch.Persistence", "YoutubeSearch.Persistence\YoutubeSearch.Persistence.csproj", "{2DFAAEC3-9880-46E5-A1B4-E9F43EFEF661}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

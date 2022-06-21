@@ -32,3 +32,9 @@ back/YoutubeSearch/YoutubeSearch.Domain/bin/Debug/net6.0/
 back/YoutubeSearch/YoutubeSearch.Persistence/bin/Debug/net6.0/
 
 back/YoutubeSearch/YoutubeSearch.Service/bin/Debug/net6.0/
+
+*.db-wal
+
+*.db
+
+*.db-shm

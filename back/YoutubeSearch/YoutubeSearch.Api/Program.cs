@@ -12,7 +12,6 @@ builder.Services.AddScoped<IYoutubeSearchService, YoutubeSearchService>();
 builder.Services.AddScoped<IBaseRepository, BaseRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-//builder.Services.AddSingleton<IYoutubeSearchService, YoutubeSearchService>();
 
 var connectionString = builder.Configuration.GetConnectionString("AppDb");
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlite(connectionString));
