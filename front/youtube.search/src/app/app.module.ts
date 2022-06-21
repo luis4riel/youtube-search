@@ -13,6 +13,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatListModule} from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 @NgModule({
   declarations: [AppComponent, SearchResultComponent],
   imports: [
@@ -27,6 +32,10 @@ import { MatDividerModule } from '@angular/material/divider';
     MatInputModule,
     MatIconModule,
     MatDividerModule,
+    MatTabsModule,
+    MatListModule,
+    MatTableModule,
+    MatSidenavModule
   ],
   providers: [YoutubeSearchService],
   bootstrap: [AppComponent],

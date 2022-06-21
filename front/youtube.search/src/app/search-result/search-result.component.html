@@ -1,39 +1,40 @@
-<!--  Search Results List -->
-<!--  TODO adicionar controle qnd não tiver nada na lista -->
-<h2>List of search results</h2>
 <mat-form-field class="example-form-field" appearance="fill">
   <mat-label>Please search for a channel, video or playlist</mat-label>
   <input matInput type="text" #inputItem>
-  <button *ngIf="inputItem" matSuffix mat-icon-button aria-label="Clear" (click)="inputItem.value=''">
+  <button *ngIf="inputItem" matSuffix mat-icon-button aria-label="Clear" 
+    (click)="inputItem.value=''">
     <mat-icon>close</mat-icon>
   </button>
 </mat-form-field>
 <div class="example-button-row">
   <button mat-stroked-button (click)="GetAllSearchResults(inputItem.value)">Search now!</button>
 </div>
-
-<div *ngFor=" let item of ytSearchListSearch">
-  <!--  TODO separar a lista de playlist/channels/videos -->
-  <p>Etag: {{ item.Etag }}</p>
-  <p>Title: {{ item.Snippet.ChannelTitle }}</p>
-  <p>Description: {{ item.Snippet.Description }}</p>
-  <p>Published At: {{ item.Snippet.PublishedAt }}</p>
-  <button class="example-button-row" type="button" (click)="AddSearchResult(item)">Save result</button>
-</div>
-<!--  Search Results List -->
-
-
-<!--  Saved Search Results List -->
-<!--  TODO adicionar controle qnd não tiver nada na lista -->
-<h2>List of search results that have been saved</h2>
-<p>Here are your saved searches:</p>
-<div *ngFor="let item of ytSearchListSaved">
-  <div *ngIf="item.resourceId.kind == 'youtube#video'">
-    <div>
-      <p>Title: {{ item.snippet.channelTitle }}</p>
-      <p>Description: {{ item.snippet.description }}</p>
-      <p>Published At: {{ item.snippet.publishedAt }}</p>
-      <button mat-stroked-button color="warn" (click)="RemoveSearchResult(item.eTag)">Delete result</button>
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="List of search results">
+    <div *ngFor="let item of ytSearchListSearch; last as last">
+      <div style="border-bottom: 14px">
+        <p>Title: {{ item.Snippet.ChannelTitle }}</p>
+        <p>Description: {{ item.Snippet.Description }}</p>
+        <p>Published At: {{ item.Snippet.PublishedAt }}</p>
+        <button mat-stroked-button color="primary" (click)="AddSearchResult(item)">Save result</button>
+        <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+      </div>
     </div>
-  </div>
-</div>
+  </mat-tab>
+  <mat-tab label="Saved Search Results List">
+    <!--  TODO adicionar controle qnd não tiver nada na lista -->
+    <div *ngFor="let item of ytSearchListSaved; last as last">
+      <div *ngIf="item.resourceId.kind == 'youtube#video'">
+        <div>
+          <p>Title: {{ item.snippet.channelTitle }}</p>
+          <p>Description: {{ item.snippet.description }}</p>
+          <p>Published At: {{ item.snippet.publishedAt }}</p>
+          <button mat-stroked-button color="warn" (click)="RemoveSearchResult(item.eTag)">Delete result</button>
+          <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
+

@@ -11,10 +11,9 @@ export class SearchResultComponent implements OnInit {
     private youtubeSearchService: YoutubeSearchService,
     private toastr: ToastrService
   ) {}
-
   public ytSearchListSaved: any;
   public ytSearchListSearch: any;
-
+  
   ngOnInit(): void {
     this.GetAllSearchResultsSaved();
   }
@@ -32,11 +31,7 @@ export class SearchResultComponent implements OnInit {
         this.ytSearchListSearch = data;
       });
   }
-
-  public ClearAllSearchResults(): any {
-    this.ytSearchListSearch = [];
-  }
-
+  
   public AddSearchResult(item: any): any {
     this.youtubeSearchService.SaveResult(item).subscribe((data) => {
       this.handleToasts(data);
