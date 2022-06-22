@@ -13,13 +13,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatListModule} from '@angular/material/list';
-import {MatTableModule} from '@angular/material/table';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDialogModule } from '@angular/material/dialog';
 import { SafePipe } from './safe.pipe';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 @NgModule({
   declarations: [AppComponent, SearchResultComponent, SafePipe],
   imports: [
@@ -39,7 +41,8 @@ import {MatCardModule} from '@angular/material/card';
     MatTableModule,
     MatSidenavModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressBarModule,
   ],
   providers: [YoutubeSearchService],
   bootstrap: [AppComponent],

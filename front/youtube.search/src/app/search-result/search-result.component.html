@@ -10,6 +10,9 @@
 </div>
 <mat-tab-group mat-align-tabs="center">
   <mat-tab label="List of search results">
+    <div *ngIf="ytSearchListSearch == null && controlSpinner">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
     <div *ngFor="let item of ytSearchListSearch; last as last">
       <mat-tab-nav-panel label="Videos">
       </mat-tab-nav-panel>

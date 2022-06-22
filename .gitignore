@@ -38,3 +38,23 @@ back/YoutubeSearch/YoutubeSearch.Service/bin/Debug/net6.0/
 *.db
 
 *.db-shm
+
+back/YoutubeSearch/.vs/ProjectEvaluation/
+
+back/YoutubeSearch/.vs/YoutubeSearch/DesignTimeBuild/
+
+*.vsidx
+
+back/YoutubeSearch/YoutubeSearch.Api.Test/bin/Debug/net6.0/
+
+back/YoutubeSearch/YoutubeSearch.Api.Test/obj/Debug/net6.0/
+
+back/YoutubeSearch/YoutubeSearch.Api.Test/obj/
+
+back/YoutubeSearch/YoutubeSearch.Tests.Common/bin/Debug/net6.0/
+
+back/YoutubeSearch/YoutubeSearch.Tests.Common/obj/Debug/net6.0/
+
+back/YoutubeSearch/.vs/YoutubeSearch/FileContentIndex/
+
+back/YoutubeSearch/YoutubeSearch.Tests.Common/obj/

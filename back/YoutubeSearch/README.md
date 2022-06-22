@@ -13,7 +13,6 @@ To run this project:
 
 *Api reference
 https://developers.google.com/youtube/v3/docs/search/list#.net
-key=API_KEY AIzaSyDzv8vVaC2xdP1K8B6rJJD7IdO0W9O4hH8
 
 *Packages
 https://www.nuget.org/profiles/google-apis-packages

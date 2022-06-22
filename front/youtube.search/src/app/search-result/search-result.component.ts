@@ -13,7 +13,8 @@ export class SearchResultComponent implements OnInit {
   ) {}
   public ytSearchListSaved: any;
   public ytSearchListSearch: any;
-  
+  public controlSpinner = false;
+
   ngOnInit(): void {
     this.GetAllSearchResultsSaved();
   }
@@ -25,13 +26,15 @@ export class SearchResultComponent implements OnInit {
   }
 
   public GetAllSearchResults(content: string): any {
+    this.controlSpinner = true;
     this.youtubeSearchService
       .SearchByValueContent(content)
       .subscribe((data) => {
         this.ytSearchListSearch = data;
+        this.controlSpinner = false;
       });
   }
-  
+
   public AddSearchResult(item: any): any {
     this.youtubeSearchService.SaveResult(item).subscribe((data) => {
       this.handleToasts(data);
