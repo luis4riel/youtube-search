@@ -1,0 +1,59 @@
+<mat-form-field class="example-form-field" appearance="fill">
+  <mat-label>Please search for a channel, video or playlist</mat-label>
+  <input matInput type="text" #inputItem>
+  <button *ngIf="inputItem" matSuffix mat-icon-button aria-label="Clear" (click)="inputItem.value=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+<div class="example-button-row">
+  <button mat-stroked-button (click)="GetAllSearchResults(inputItem.value)">Search now!</button>
+</div>
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="List of search results">
+    <div *ngIf="ytSearchListSearch == null && controlSpinner">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+    <div *ngFor="let item of ytSearchListSearch; last as last">
+      <mat-tab-nav-panel label="Videos">
+      </mat-tab-nav-panel>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{item.Snippet.ChannelTitle}}</mat-card-title>
+          <mat-card-subtitle>{{item.Snippet.PublishedAt}}</mat-card-subtitle>
+        </mat-card-header>
+        <div *ngIf="item.ResourceId.Kind == 'youtube#video'">
+          <iframe [src]="'https://www.youtube.com/embed/' + item.ResourceId.VideoId | safeUrl" width="360"
+            height="215"></iframe>
+        </div>
+        <mat-card-content>
+          <p>{{ item.Snippet.Description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-stroked-button color="primary" (click)="AddSearchResult(item)">SAVE</button>
+        </mat-card-actions>
+      </mat-card>
+      <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+    </div>
+  </mat-tab>
+  <mat-tab label="Saved Search Results List">
+    <div *ngFor="let item of ytSearchListSaved; last as last">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{item.snippet.channelTitle}}</mat-card-title>
+          <mat-card-subtitle>{{item.snippet.publishedAt}}</mat-card-subtitle>
+        </mat-card-header>
+        <div *ngIf="item.resourceId.kind == 'youtube#video'">
+          <iframe [src]="'https://www.youtube.com/embed/' + item.resourceId.videoId | safeUrl" width="360"
+            height="215"></iframe>
+        </div>
+        <mat-card-content>
+          <p>{{ item.snippet.description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-stroked-button color="warn" (click)="RemoveSearchResult(item.eTag)">DELETE</button>
+        </mat-card-actions>
+      </mat-card>
+      <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+    </div>
+  </mat-tab>
+</mat-tab-group>

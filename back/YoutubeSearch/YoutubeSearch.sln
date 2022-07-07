@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeSearch.Api", "YoutubeSearch.Api\YoutubeSearch.Api.csproj", "{43CEBA45-882E-46D5-8BEA-E3776AD4DD86}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeSearch.Domain", "YoutubeSearch.Domain\YoutubeSearch.Domain.csproj", "{F316969C-EA2E-4549-ACC7-C00884A224A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeSearch.Application", "YoutubeSearch.Service\YoutubeSearch.Application.csproj", "{E01837F4-33BF-4740-B024-2D5933153537}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeSearch.Persistence", "YoutubeSearch.Persistence\YoutubeSearch.Persistence.csproj", "{2DFAAEC3-9880-46E5-A1B4-E9F43EFEF661}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8C828BC1-0F18-45FC-8131-F33610AADEAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeSearch.Tests.Common", "YoutubeSearch.Tests.Common\YoutubeSearch.Tests.Common.csproj", "{98018211-AF34-44E4-9F88-DA5AE1EBFF02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeSearch.Api.Test", "YoutubeSearch.Api.Test\YoutubeSearch.Api.Test.csproj", "{32BFF6E7-4B6B-473F-927F-CF8CB8D00E60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43CEBA45-882E-46D5-8BEA-E3776AD4DD86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43CEBA45-882E-46D5-8BEA-E3776AD4DD86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43CEBA45-882E-46D5-8BEA-E3776AD4DD86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43CEBA45-882E-46D5-8BEA-E3776AD4DD86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F316969C-EA2E-4549-ACC7-C00884A224A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F316969C-EA2E-4549-ACC7-C00884A224A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F316969C-EA2E-4549-ACC7-C00884A224A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F316969C-EA2E-4549-ACC7-C00884A224A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E01837F4-33BF-4740-B024-2D5933153537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E01837F4-33BF-4740-B024-2D5933153537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E01837F4-33BF-4740-B024-2D5933153537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E01837F4-33BF-4740-B024-2D5933153537}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DFAAEC3-9880-46E5-A1B4-E9F43EFEF661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DFAAEC3-9880-46E5-A1B4-E9F43EFEF661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DFAAEC3-9880-46E5-A1B4-E9F43EFEF661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DFAAEC3-9880-46E5-A1B4-E9F43EFEF661}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98018211-AF34-44E4-9F88-DA5AE1EBFF02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98018211-AF34-44E4-9F88-DA5AE1EBFF02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98018211-AF34-44E4-9F88-DA5AE1EBFF02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98018211-AF34-44E4-9F88-DA5AE1EBFF02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32BFF6E7-4B6B-473F-927F-CF8CB8D00E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32BFF6E7-4B6B-473F-927F-CF8CB8D00E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32BFF6E7-4B6B-473F-927F-CF8CB8D00E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32BFF6E7-4B6B-473F-927F-CF8CB8D00E60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{98018211-AF34-44E4-9F88-DA5AE1EBFF02} = {8C828BC1-0F18-45FC-8131-F33610AADEAB}
+		{32BFF6E7-4B6B-473F-927F-CF8CB8D00E60} = {8C828BC1-0F18-45FC-8131-F33610AADEAB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {972E5F07-687A-45EE-A918-6362C31FA822}
+	EndGlobalSection
+EndGlobal

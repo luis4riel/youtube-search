@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "43ceba45-882e-46d5-8bea-e3776ad4dd86": {
+      "ProjectGuid": "43ceba45-882e-46d5-8bea-e3776ad4dd86",
+      "DisplayName": "YoutubeSearch.Api",
+      "ColorIndex": 0
+    },
+    "e01837f4-33bf-4740-b024-2d5933153537": {
+      "ProjectGuid": "e01837f4-33bf-4740-b024-2d5933153537",
+      "DisplayName": "YoutubeSearch.Application",
+      "ColorIndex": 1
+    },
+    "2dfaaec3-9880-46e5-a1b4-e9f43efef661": {
+      "ProjectGuid": "2dfaaec3-9880-46e5-a1b4-e9f43efef661",
+      "DisplayName": "YoutubeSearch.Persistence",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
