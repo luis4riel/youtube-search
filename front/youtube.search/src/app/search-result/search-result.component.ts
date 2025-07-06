@@ -24,8 +24,14 @@ export class SearchResultComponent implements OnInit {
       this.ytSearchListSaved = data;
     });
   }
-
+  public clearSearchResults(): any {
+    this.ytSearchListSearch = null;
+  }
   public GetAllSearchResults(content: string): any {
+    if(content == null || content.trim() === '') {
+      this.clearSearchResults();
+      return;
+    }
     this.controlSpinner = true;
     this.youtubeSearchService
       .SearchByValueContent(content)

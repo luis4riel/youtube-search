@@ -1,7 +1,8 @@
 <mat-form-field class="example-form-field" appearance="fill">
   <mat-label>Please search for a channel, video or playlist</mat-label>
-  <input matInput type="text" #inputItem>
-  <button *ngIf="inputItem" matSuffix mat-icon-button aria-label="Clear" (click)="inputItem.value=''">
+  <input matInput type="text" #inputItem placeholder="Search for a channel, video or playlist"
+    (keyup.enter)="GetAllSearchResults(inputItem.value)">
+  <button *ngIf="inputItem" matSuffix mat-icon-button aria-label="Clear" (click)="inputItem.value='' ; clearSearchResults()">
     <mat-icon>close</mat-icon>
   </button>
 </mat-form-field>
